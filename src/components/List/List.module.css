@@ -1,0 +1,15 @@
+.father{
+
+    margin: 0;
+    padding: 0;
+    width: 320px;
+
+}
+
+.productContainer{
+
+    display: flex;
+    justify-items: inline;
+    align-items: block;
+
+}
