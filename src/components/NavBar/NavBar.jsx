@@ -1,12 +1,17 @@
 import React from 'react'
 import ElementBar from '../ElementBar/ElementBar'
 import style from './NavBar.module.css'
+import {icons} from '../../data-base/dataicon'
 
 function NavBar() {
+    console.log(icons)
     return (
+        
         <div className={style.navigator}>
 
-                <ElementBar/>
+            {
+                icons.map((element, index) => <ElementBar key={index} data={element} />)
+            }
 
         </div>
     )

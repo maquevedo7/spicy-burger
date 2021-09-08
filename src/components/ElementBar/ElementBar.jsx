@@ -1,27 +1,19 @@
 import React from 'react'
 import style from '../ElementBar/ElementBar.module.css'
-import {icons} from '../../data-base/dataicon'
 
-function ElementBar() {
-
+function ElementBar({data}) {
+console.log(data);
     return (
-        <div className={style.category}>
 
-                {
-                    icons.map((icon, index) =>(
+        <div>
                 
-                        <div>
-                            <div className={style.icon}>{icon.icon}</div>
-                            <p>{icon.txt}</p>
-                        </div>
-
-                    ))
-
-                }
-
-                
+            <div className={style.box}>
+                <div className={style.icon}>{data.icon}</div>
+                <p className={style.txt}>{data.txt}</p>
+            </div>
 
         </div>
+        
     )
 }
 

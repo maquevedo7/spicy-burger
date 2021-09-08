@@ -1,0 +1,33 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.logo {
+
+    background-color: #45D5CD;
+    display: flex;
+    justify-content: center;
+    padding-right: 40px;
+
+}
+
+img {
+
+    width: 80%;
+    height: 80%;
+
+}
+
+@media (min-width: 310px) {
+
+    img {
+
+        width: 120%;
+        padding-left: 60px;
+    
+    }
+
+}

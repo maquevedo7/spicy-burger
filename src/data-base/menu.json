@@ -94,7 +94,7 @@
 
     {
         "id": "010",
-        "category": "acompañamiento",
+        "category": "adiciones",
         "img": "jalapeños",
         "name": "jalapeños",
         "price": "$1.500"
@@ -102,7 +102,7 @@
 
     {
         "id": "011",
-        "category": "acompañamiento",
+        "category": "adiciones",
         "img": "queso",
         "name": "queso",
         "price": "$1.500"
@@ -110,7 +110,7 @@
 
     {
         "id": "012",
-        "category": "acompañamiento",
+        "category": "adiciones",
         "img": "tocineta",
         "name": "tocineta",
         "price": "$2.500"
@@ -118,7 +118,7 @@
 
     {
         "id": "013",
-        "category": "acompañamiento",
+        "category": "adiciones",
         "img": "salsa queso cheddar",
         "name": "salsa queso cheddar",
         "price": "$3.000"
@@ -126,7 +126,7 @@
 
     {
         "id": "014",
-        "category": "acompañamiento",
+        "category": "adiciones",
         "img": "chicharron",
         "name": "chicharron",
         "price": "$3.500"

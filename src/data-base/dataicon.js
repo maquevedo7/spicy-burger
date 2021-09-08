@@ -27,7 +27,7 @@ export const icons = [
     },
     {
         "icon": <Chili/>,
-        "txt": "acompañamientos"
+        "txt": "adiciones"
     },
     {
         "icon": <Soda/>,
