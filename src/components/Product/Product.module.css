@@ -1,3 +1,10 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
 .boxMobile, .boxDesktop {
 
     display:flex;
@@ -6,7 +13,7 @@
     border-radius: 15px;
     margin: 20px;
     background-color: #ff92ef96;
-    width: 130px;
+    width: 135px;
     padding-bottom: 5px;
 
 }
@@ -18,15 +25,33 @@
 
 }
 
-.img {
 
-    width: 100px;
-    padding: 5px;
-    border-radius: 50%;
+.infoGeneral {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.infoImg {
+
+    width: 100%;
+    border-radius: 20px
 
 }
 
 .name {
+
+    font-size: 14px;
+    margin: 0;
+    padding: 0 3px;
+
+}
+
+.price {
 
     
     font-size: 12px;
@@ -35,9 +60,17 @@
 
 }
 
-.btn{
+.btn, .cart{
 
     font-size: 14px;
+
+}
+
+:hover.cart {
+
+    background-color: white;
+    color: black;
+    border: 2px solid black;
 
 }
 
@@ -52,11 +85,18 @@
 
     background-color: #45D5CD;
     font-size: 11px;
-    margin: 5px 0 7px 0;
-    padding: 5px;
+    margin-bottom: 7px;
+    padding: 8px 7px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+}
+
+.description p {
+
+    padding: 8px;
 
 }
 
@@ -80,7 +120,7 @@
 
 }
 
-.selector, .price, .size {
+.selector, .total, .size, .cart {
 
     display: flex;
     flex-direction: row;
@@ -89,24 +129,27 @@
     height: 20px;
     width: 95px;
     padding-left: 2.5px ;
-    margin: 2px 5px;
+    margin: 3px 5px;
     background-color: #6C00D8;
     border-radius: 15px;
     color: rgb(255, 255, 255);
-    font-size: 8px;
+    font-size: 9px;
 
 }
 
-.selector, .button, .btn {
+.cart
+
+.selector, .button, .btn, .cart {
 
     cursor: pointer;
 
 } 
 
-.price {
+.total, .cart {
 
     width: 70px;
     background-color: #000000;
+    color: white;
 
 }
 
@@ -119,7 +162,7 @@
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .boxMobile {
 
@@ -135,7 +178,7 @@
 
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
     .boxMobile {
 
@@ -146,14 +189,11 @@
     .boxDesktop {
 
         display: flex;
-
-    }
-
-    .img {
-
-        width: 80%;
-        border-radius: 50px;
-        padding: 15px 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        margin: 15px;
 
     }
 
@@ -170,11 +210,10 @@
 
     }
 
-    .description p {
+    .description p, .cart p {
 
-        background-color: #45D5CD;
         font-size: 17px;
-        padding: 0 10px;
+        padding: 5px 10px;
 
     }
 
@@ -187,7 +226,7 @@
 
     }
 
-    .price, .size {
+    .total, .size, .cart {
 
         width: 120px;
         height: 30px;

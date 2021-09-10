@@ -5,6 +5,11 @@
 
 }
 
+.cart {
+
+    font-size: 50px;
+
+}
 .logo {
 
     background-color: #45D5CD;
@@ -26,8 +31,19 @@ img {
     img {
 
         width: 120%;
-        padding-left: 60px;
     
     }
+
+}
+
+@media (min-width: 310px) { 
+
+
+    .headerDesktop, .headerTab {
+
+        display: none;
+
+    }
+
 
 }

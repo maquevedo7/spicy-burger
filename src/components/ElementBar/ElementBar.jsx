@@ -2,7 +2,7 @@ import React from 'react'
 import style from '../ElementBar/ElementBar.module.css'
 
 function ElementBar({data}) {
-console.log(data);
+
     return (
 
         <div>
@@ -15,7 +15,7 @@ console.log(data);
         </div>
         
     )
-}
+} 
 
 export default ElementBar
 

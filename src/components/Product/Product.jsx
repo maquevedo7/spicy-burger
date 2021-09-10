@@ -3,56 +3,89 @@ import style from  './Product.module.css'
 import {FaRegArrowAltCircleDown as RowDown} from "react-icons/fa"
 import {AiOutlineMinusCircle as Minus} from "react-icons/ai"
 import {AiOutlinePlusCircle as Plus} from "react-icons/ai"
+import {FiCheckCircle as Check} from "react-icons/fi"
 
-function Product() {
-
+function Product({addCart, data}) {
+    
+    const { id, name, category, price, size, ingredients, sauce,accompaniment, img} = data
+    
     const [description, setdescription] = useState(false)
-
+    
+    
     return (
 
         <div>
 
             <div className={style.boxMobile}>
 
-                <img className={style.img} src="https://i.ibb.co/s1XQFj4/triple.jpg" alt="name" border="0"/>
-                <h2 className={style.name}>spicy burger</h2>
-                <div className={style.button} onClick={() => setdescription(!description)}><RowDown/></div>
+                <div className={style.info}>
+
+                    <img className={style.infoImg} src={img} alt="name" border="0"/>
+
+                    <div className={style.infoGeneral}>
+                        
+                        <h2 className={style.name}>{name}</h2>
+
+                        {price.map((e) => <p className={style.price}>{e}</p>)}
+                       
+                        {ingredients? 
+                        <div className={style.button} onClick={() => setdescription(!description)}><RowDown/></div>
+                        : ""}
+
+                    </div> 
+
+                </div> 
 
                 <div className={description? `${style.description} ${style.descriptionVisible}` :`${style.description} ${style.descriptionHide}`}>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus esse, laborum eius sed sunt sint</p>
+                    {ingredients ? <p>{ingredients}</p> :""}
 
+                    {sauce? 
                     <div>
                         <select className={style.selector}>
-                            <option value="sauce1">salsa BBQ de whisky</option>
-                            <option value="sauce2">salsa BBQ picante</option>
+                            
+                            {sauce.map((e)=><option value="sauce1">{e}</option>)}
+                            
                         </select>
                     </div>
+                    : ""}
 
+                    {accompaniment?
                     <div>
                         <select className={style.selector}>
-                            <option value="accompaniment1">zanahoria</option>
-                            <option value="accompaniment2">apio</option>
+                           
+                            {accompaniment.map((e) => <option value="accompaniment1">{e}</option>)}
+                            
                         </select>
                     </div>
+                    : ""}
 
                 </div>
                 
                 <div className={style.select} >
                     
                     <div>
+
+                        {size? 
                         <select className={style.selector}>
-                            <option value="size1">sola</option>
-                            <option value="size2">en combo</option>
+
+                            {size? size.map((e) => <option value="size1">{e}</option>): ""}
+                            
                         </select>
+                        : ""}
                     </div>
 
                     <div className={style.finalSelector}>
                         <Minus className={style.btn}/>
-                        <div className={style.price}>
+                        <div className={style.total}>
                             <p>valor / cantidad</p>
                         </div>
                         <Plus className={style.btn}/>
+                    </div>
+
+                    <div className={style.cart} >
+                        <p >añadir</p>
+                        <Check/>
                     </div>
                     
                 </div>
@@ -60,28 +93,60 @@ function Product() {
 
             <div className={style.boxDesktop}>
 
-                <img className={style.img} src="https://i.ibb.co/s1XQFj4/triple.jpg" alt="name" border="0"/>
-                <h2 className={style.name}>spicy burger</h2>
+                <div className={style.info}>
+
+                    <img className={style.infoImg} src={img} alt="name" border="0"/>
+                    
+                    <div className={style.infoGeneral}>
+                        
+                        <h2 className={style.name}>{name}</h2>
+                        {price.map((e) => <p className={style.price}>{e}</p>)}
+                        
+                    </div> 
+
+                </div>
+
+                { ingredients ?
 
                 <div className={style.description}>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus esse, laborum eius sed sunt sint</p>
+                    {ingredients? <p>{ingredients}</p>: ""}
 
                     <div>
+
+                        { 
+                        
+                        sauce?
+
                         <select className={style.selector}>
-                            <option value="sauce1">salsa BBQ de whisky</option>
-                            <option value="sauce2">salsa BBQ picante</option>
+
+                            {sauce.map((e) => <option value="sauce1">{e}</option>)}
+                            
                         </select>
+
+                        : ""}
+
                     </div>
 
                     <div>
+
+                        {
+                        
+                        accompaniment?
+                        
                         <select className={style.selector}>
-                            <option value="accompaniment1">zanahoria</option>
-                            <option value="accompaniment2">apio</option>
+                            
+                            {accompaniment.map((e) => <option value="accompaniment1">{e}</option>)}
+
                         </select>
+
+                        : ""}
+
                     </div>
 
                 </div>
+
+                : "" }
                 
                 <div className={style.select} >
                     
@@ -104,10 +169,12 @@ function Product() {
                     </div>
 
                     <div className={style.finalSelector}>
-                        <div className={style.price}>
+                        <div className={style.total}>
                             <p>valor total</p>
                         </div>
                     </div>
+
+                    <p className={style.cart} onClick={()=>addCart(id)}>añadir <Check/></p>
                     
                 </div>
             </div>

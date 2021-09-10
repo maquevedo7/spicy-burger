@@ -1,11 +1,14 @@
-import React from 'react'
-import products from '../../data-base/menu.json'
+import React, { useContext } from 'react'
+import { AppContext } from '../../context/AppContext'
 import Product from '../Product/Product'
 import style from './List.module.css'
 
+
 function List() {
-    console.log(List)
-    return (
+
+  const {products, addCart } = useContext(AppContext) //salen del render context
+
+  return (
         <div className={style.father}>
 
           <h1>MENÚ</h1>
@@ -13,12 +16,10 @@ function List() {
           <div className={style.productContainer}>
 
             {
-              products.map((Element)=>
-              <Product key={Element.id}/>
-              )
+              products.map((product) => <Product key={product.id} data={product} addCart={addCart} />)
             }
 
-          </div>
+          </div> 
           
         
         </div>

@@ -4,7 +4,7 @@ import style from './NavBar.module.css'
 import {icons} from '../../data-base/dataicon'
 
 function NavBar() {
-    console.log(icons)
+
     return (
         
         <div className={style.navigator}>
