@@ -83,10 +83,11 @@ function Product({addCart, data}) {
                         <Plus className={style.btn}/>
                     </div>
 
-                    <div className={style.cart} >
-                        <p >añadir</p>
+                    <button className={style.cart} onClick={()=>addCart(id)}>
+                        añadir 
                         <Check/>
-                    </div>
+                    </button>
+
                     
                 </div>
             </div>
@@ -174,7 +175,10 @@ function Product({addCart, data}) {
                         </div>
                     </div>
 
-                    <p className={style.cart} onClick={()=>addCart(id)}>añadir <Check/></p>
+                    <button className={style.cart} onClick={()=>addCart(id)}>
+                        añadir 
+                        <Check/>
+                    </button>
                     
                 </div>
             </div>

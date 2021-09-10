@@ -16,7 +16,7 @@ function List() {
           <div className={style.productContainer}>
 
             {
-              products.map((product) => <Product key={product.id} data={product} addCart={addCart} />)
+              products.map((product) => <Product key={product.id} data={product} addCart={addCart}/>)
             }
 
           </div> 

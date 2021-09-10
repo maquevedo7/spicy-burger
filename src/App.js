@@ -1,8 +1,10 @@
 import { Route, Router, Switch } from "react-router";
-import CardCart from "./components/CardCart/CardCart";
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
-import Header from "./components/Header/Header";
 import List from "./components/List/List";
+
+import Header from "./components/Header/Header";
+import Section from "./components/Sections/Sections"
 import { AppProvider } from "./context/AppContext";
 
 function App() {
@@ -10,13 +12,9 @@ function App() {
     <AppProvider>
     <div className="App">
       <Header/>
-      <div>
-        <List/>
-      </div>
+      <Section/>
     </div>
-    <Switch>
-      <Route path="/cart"><CardCart/></Route>
-    </Switch>
+    
   </AppProvider>
   );
 }

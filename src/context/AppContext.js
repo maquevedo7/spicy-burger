@@ -6,6 +6,7 @@ export const AppContext = React.createContext();
 export class AppProvider extends Component {
 
     state = {
+    
         products: list,
         cart: [],
         total: 0

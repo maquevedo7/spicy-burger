@@ -1,25 +1,27 @@
-import React from 'react'
 import style from './Cart.module.css'
+import Product from '../Product/Product'
+import React, { useContext, useEffect } from 'react'
+import { AppContext } from '../../context/AppContext'
+import Purchase from '../Purchase/Purchase'
 
-function Cart() {
-    return (
-        <div className={style.final}>
-            <div className={style.shop}>
-                <span>TU COMPRA</span>
-                <p>Productos añadidos</p>
-                <span>TOTAL:</span>
-            </div>
-            <div className={style.form}>
-                <p>DATOS DE ENVÍO</p>
-                <form className="dataform" action="form">
-                    <input type="text" placeholder="Nombre"/>
-                    <input type="text" placeholder="Dirección completa"/>
-                    <input type="text" placeholder="Celular"/>
-                </form>
-            </div>
 
-        </div>
+const Cart = () => {
+
+    const { cart,increase,reduction,removeProduct,total,getTotal } = useContext
+    (AppContext);
+    
+  useEffect(() => {
+    getTotal()
+  }, [])
+
+  if(cart.length === 0){
+    return (<h2 style={{textAlign:"center", paddingTop:'80px'}}>Tu carrito está vacío</h2>)
+  }else{
+     return (
+
+        <p>añadido</p>
     )
+}
 }
 
 export default Cart

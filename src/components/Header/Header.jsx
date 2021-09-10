@@ -1,8 +1,9 @@
 import {RiShoppingCart2Fill as Cart} from 'react-icons/ri'
 import React from 'react'
+import {Link} from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import style from '../Header/Header.module.css'
-import { Link } from 'react-router-dom'
+
 
 function Header() {
     return (
@@ -12,8 +13,13 @@ function Header() {
 
                 <div className={style.logo}>
 
+                    <Link to="/">
                     <img src="https://i.ibb.co/DKk8LQP/navBar.png" alt="background-logo" />
-                    <Link to="/cart"><Cart className={style.cart}/></Link>
+                    </Link>
+                    <span>0</span>
+                    <Link to="/cart">
+                        <Cart className={style.cart} width="30"/>
+                    </Link>
 
                 </div>
 
