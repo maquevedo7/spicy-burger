@@ -9,16 +9,6 @@ import Select from 'react-select'
 function Product({addCart, data}) {
     
     const { id, name, category, price, size, ingredients, sauce,accompaniment, img} = data
-    
-    const [description, setdescription] = useState(false)
-    const [selectAccompaniment, setselectAccompaniment] = useState(null)
-    const [selectSauce, setselectSauce] = useState(null)
-    const [selectSize, setselectSize] = useState(null)
-
-    const changeAccompaniment = (value) => {setselectAccompaniment (value)}
-    const changeSauce = (value) => {setselectSauce(value)}
-    const changeSize = (value) => {setselectSize(value)}
-
 
     return (
 
